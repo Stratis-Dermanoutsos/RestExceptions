@@ -1,0 +1,14 @@
+using System.Net;
+
+namespace RestExceptions;
+
+/// <summary>
+/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/404
+/// </summary>
+public class NotFoundRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+{
+    public static string DefaultMessage => "Content not found.";
+
+    public override string Title => "Not Found";
+    public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
+}
