@@ -7,5 +7,6 @@
     <Folder Name="/solution/git/">
         <File Path=".gitignore" />
         <File Path=".github/CODEOWNERS" />
+        <File Path="README.md" />
     </Folder>
 </Solution>
