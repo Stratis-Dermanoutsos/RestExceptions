@@ -7,7 +7,7 @@ namespace RestExceptions;
 /// </summary>
 public class InternalServerErrorRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
 {
-    public static string DefaultMessage => "This method is not yet implemented.";
+    public static string DefaultMessage => "The server was unable to complete your request.";
 
     public override string Title => "Internal Server Error";
     public override HttpStatusCode StatusCode => HttpStatusCode.InternalServerError;
