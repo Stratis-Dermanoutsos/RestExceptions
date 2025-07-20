@@ -11,25 +11,7 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
         Exception exception,
         CancellationToken cancellationToken = default)
     {
-        if (exception is not RestException restException)
-        {
-            var internalServerError = new InternalServerErrorRestException();
-            var internalServerErrorProblemDetails = new ProblemDetails
-            {
-                Status = (int)internalServerError.StatusCode,
-                Title = internalServerError.Title,
-                Detail = internalServerError.Message,
-                Type = internalServerError.GetType().Name
-            };
-
-            httpContext.Response.StatusCode = (int)internalServerError.StatusCode;
-            return await problemDetailsService.TryWriteAsync(
-                new ProblemDetailsContext
-                {
-                    HttpContext = httpContext,
-                    ProblemDetails = internalServerErrorProblemDetails
-                });
-        }
+        var restException = MapToRestException(exception);
 
         var problemDetails = new ProblemDetails
         {
@@ -46,5 +28,15 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
                 HttpContext = httpContext,
                 ProblemDetails = problemDetails
             });
+    }
+
+    private static RestException MapToRestException(Exception exception)
+    {
+        if (exception is RestException restException)
+        {
+            return restException;
+        }
+
+        return new InternalServerErrorRestException(exception.Message);
     }
 }
