@@ -18,7 +18,7 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
             Status = (int)restException.StatusCode,
             Title = restException.Title,
             Detail = restException.Message,
-            Type = restException.GetType().Name // TODO
+            Type = $"https://www.rfc-editor.org/rfc/rfc9110.html#name-{restException.TypeSuffix}"
         };
 
         httpContext.Response.StatusCode = (int)restException.StatusCode;
