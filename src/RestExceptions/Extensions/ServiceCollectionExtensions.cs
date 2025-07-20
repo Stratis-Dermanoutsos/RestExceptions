@@ -16,7 +16,7 @@ public static class ServiceCollectionExtensions
     /// <code>app.UseExceptionHandler();</code>
     /// </remarks>
     /// <param name="services">The service collection to add the services to.</param>
-    /// <returns></returns>
+    /// <returns>The newly configured <see cref="IServiceCollection"/>.</returns>
     public static IServiceCollection AddRestExceptions(this IServiceCollection services)
     {
         services.AddProblemDetails(options =>

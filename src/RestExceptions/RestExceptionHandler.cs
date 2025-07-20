@@ -11,7 +11,7 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
         Exception exception,
         CancellationToken cancellationToken = default)
     {
-        var restException = MapToRestException(exception);
+        var restException = exception.MapToRestException();
 
         var problemDetails = new ProblemDetails
         {
@@ -28,15 +28,5 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
                 HttpContext = httpContext,
                 ProblemDetails = problemDetails
             });
-    }
-
-    private static RestException MapToRestException(Exception exception)
-    {
-        if (exception is RestException restException)
-        {
-            return restException;
-        }
-
-        return new InternalServerErrorRestException(exception.Message);
     }
 }
