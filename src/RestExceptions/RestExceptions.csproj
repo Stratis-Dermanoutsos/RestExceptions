@@ -1,4 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <PackageId>RestExceptions</PackageId>
+    <Title>RestExceptions</Title>
+    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
+    <Version>9.0.7</Version>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+
+    <Authors>Stratis-Dermanoutsos</Authors>
+    <Company>Stratis-Dermanoutsos</Company>
+
+    <Copyright>Copyright (c) Stratis Dermanoutsos 2025</Copyright>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+
+    <PackageProjectUrl>https:s//github.com/Stratis-Dermanoutsos/RestExceptions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</RepositoryUrl>
+
+    <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" />
     <PackageReference Include="System.Net.Http" />
@@ -7,5 +27,10 @@
   <ItemGroup>
     <!--  Required to have the AddProblemDetails extension  -->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="../../LICENSE" Pack="true" PackagePath="/"/>
+    <None Include="../../README.md" Pack="true" PackagePath="/"/>
   </ItemGroup>
 </Project>
