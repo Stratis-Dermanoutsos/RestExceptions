@@ -9,19 +9,17 @@ var app = builder.Build();
 
 app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
 {
-    return statusCode switch
+    throw statusCode switch
     {
-        400 => throw new BadRequestRestException(),
-        401 => throw new UnauthorizedRestException(),
-        403 => throw new ForbiddenRestException(),
-        404 => throw new NotFoundRestException(),
-        409 => throw new ConflictRestException(),
-        500 => throw new InternalServerErrorRestException(),
-        501 => throw new NotImplementedRestException(),
-        _ => throw new Exception()
+        400 => new BadRequestRestException(),
+        401 => new UnauthorizedRestException(),
+        403 => new ForbiddenRestException(),
+        404 => new NotFoundRestException(),
+        409 => new ConflictRestException(),
+        500 => new InternalServerErrorRestException(),
+        501 => new NotImplementedRestException(),
+        _ => new Exception()
     };
-
-    return Results.Ok(statusCode);
 });
 
 //! Important
