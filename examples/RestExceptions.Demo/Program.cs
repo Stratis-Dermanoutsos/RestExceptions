@@ -22,6 +22,12 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         502 => new BadGatewayRestException(),
         503 => new ServiceUnavailableRestException(),
         504 => new GatewayTimeoutRestException(),
+        505 => new HttpVersionNotSupportedRestException(),
+        506 => new VariantAlsoNegotiatesRestException(),
+        507 => new InsufficientStorageRestException(),
+        508 => new LoopDetectedRestException(),
+        510 => new NotExtendedRestException(),
+        511 => new NetworkAuthenticationRequiredRestException(),
         _ => new Exception()
     };
 });

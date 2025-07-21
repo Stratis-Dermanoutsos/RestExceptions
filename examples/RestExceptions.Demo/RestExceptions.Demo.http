@@ -35,6 +35,51 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/502
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/503
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/504
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/505
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/506
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/507
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/508
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/510
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/511
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/0
 Accept: application/json
 
