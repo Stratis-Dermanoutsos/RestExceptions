@@ -1,0 +1,14 @@
+using System.Net;
+
+namespace RestExceptions;
+
+/// <summary>
+/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/503
+/// </summary>
+public class ServiceUnavailableRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+{
+    public static string DefaultMessage => "The server is not ready to handle the request.";
+
+    public override string Title => "Service Unavailable";
+    public override HttpStatusCode StatusCode => HttpStatusCode.ServiceUnavailable;
+}

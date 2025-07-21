@@ -16,8 +16,12 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         403 => new ForbiddenRestException(),
         404 => new NotFoundRestException(),
         409 => new ConflictRestException(),
+        422 => new UnprocessableContentRestException(),
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),
+        502 => new BadGatewayRestException(),
+        503 => new ServiceUnavailableRestException(),
+        504 => new GatewayTimeoutRestException(),
         _ => new Exception()
     };
 });
