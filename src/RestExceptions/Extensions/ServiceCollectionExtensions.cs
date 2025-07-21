@@ -23,12 +23,11 @@ public static class ServiceCollectionExtensions
         {
             options.CustomizeProblemDetails = context =>
             {
-                context.ProblemDetails.Instance =
-                    $"[{context.HttpContext.Request.Method}] {context.HttpContext.Request.Path}";
+                context.ProblemDetails.Instance = context.HttpContext.Request.Path;
+                context.ProblemDetails.Extensions.Add("method", context.HttpContext.Request.Method);
                 context.ProblemDetails.Extensions.Add("requestId", context.HttpContext.TraceIdentifier);
-
-                var activity = context.HttpContext.Features.Get<IHttpActivityFeature>()?.Activity;
-                context.ProblemDetails.Extensions.TryAdd("traceId", activity?.Id);
+                context.ProblemDetails.Extensions.TryAdd("traceId",
+                    context.HttpContext.Features.Get<IHttpActivityFeature>()?.Activity.Id);
             };
         });
         services.AddExceptionHandler<RestExceptionHandler>();

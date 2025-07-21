@@ -3,7 +3,7 @@
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
     <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
-    <Version>9.0.7.1</Version>
+    <Version>9.0.7.2</Version>
     <TargetFramework>net9.0</TargetFramework>
 
     <Authors>Stratis-Dermanoutsos</Authors>
