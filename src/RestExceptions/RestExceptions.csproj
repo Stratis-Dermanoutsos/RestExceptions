@@ -4,7 +4,6 @@
     <Title>RestExceptions</Title>
     <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
     <Version>9.0.7.3</Version>
-    <TargetFrameworks>netstandard2.0;net8.0;net9.0</TargetFrameworks>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -34,7 +33,7 @@
     <PackageReference Include="System.Net.Http" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
+  <ItemGroup>
     <!--  Required to have the AddProblemDetails extension  -->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
