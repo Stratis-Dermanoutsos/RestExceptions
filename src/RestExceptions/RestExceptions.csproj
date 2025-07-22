@@ -2,7 +2,6 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
     <Version>9.0.7.3</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
@@ -14,6 +13,7 @@
     <PackageProjectUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</RepositoryUrl>
 
+    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
     <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
