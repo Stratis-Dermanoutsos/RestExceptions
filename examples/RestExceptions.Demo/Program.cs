@@ -14,6 +14,7 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
 {
     throw statusCode switch
     {
+        // 4xx
         400 => new BadRequestRestException(),
         401 => new UnauthorizedRestException(),
         403 => new ForbiddenRestException(),
@@ -27,6 +28,7 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
             { "conflictProperty2", "This is another Conflict prop." },
         }),
         422 => new UnprocessableContentRestException(),
+        // 5xx
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),
         502 => new BadGatewayRestException(),
