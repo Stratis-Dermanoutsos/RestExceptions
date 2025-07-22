@@ -3,7 +3,7 @@ using System.Net;
 namespace RestExceptions;
 
 /// <summary>
-/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/405
+/// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/405"/>
 /// </summary>
 public class MethodNotAllowedRestException(
     string? message = null,

@@ -3,7 +3,7 @@ using System.Net;
 namespace RestExceptions;
 
 /// <summary>
-/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422
+/// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/422"/>
 /// </summary>
 public class UnprocessableContentRestException(
     string? message = null,

@@ -3,7 +3,7 @@ using System.Net;
 namespace RestExceptions;
 
 /// <summary>
-/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/503
+/// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/503"/>
 /// </summary>
 public class ServiceUnavailableRestException(
     string? message = null,

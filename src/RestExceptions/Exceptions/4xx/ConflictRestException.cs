@@ -3,7 +3,7 @@ using System.Net;
 namespace RestExceptions;
 
 /// <summary>
-/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/409
+/// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/409"/>
 /// </summary>
 public class ConflictRestException(
     string? message = null,

@@ -3,7 +3,7 @@ using System.Net;
 namespace RestExceptions;
 
 /// <summary>
-/// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/506
+/// <see href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/506"/>
 /// </summary>
 public class VariantAlsoNegotiatesRestException(
     string? message = null,
