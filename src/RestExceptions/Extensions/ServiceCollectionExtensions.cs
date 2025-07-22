@@ -30,6 +30,7 @@ public static class ServiceCollectionExtensions
                     context.HttpContext.Features.Get<IHttpActivityFeature>()?.Activity.Id);
             };
         });
+        services.AddSingleton<IRestExceptionProblemDetailsBuilder, DefaultRestExceptionProblemDetailsBuilder>();
         services.AddExceptionHandler<RestExceptionHandler>();
 
         return services;
