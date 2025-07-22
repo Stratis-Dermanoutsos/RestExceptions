@@ -17,9 +17,15 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         // 4xx
         400 => new BadRequestRestException(),
         401 => new UnauthorizedRestException(),
+        402 => new PaymentRequiredRestException(),
         403 => new ForbiddenRestException(),
         404 => new NotFoundRestException(),
+        405 => new MethodNotAllowedRestException(),
+        406 => new NotAcceptableRestException(),
+        407 => new ProxyAuthenticationRequiredRestException(),
+        408 => new RequestTimeoutRestException(),
         409 => new ConflictRestException(),
+        410 => new GoneRestException(),
         422 => new UnprocessableContentRestException(),
         // 5xx
         500 => new InternalServerErrorRestException(),

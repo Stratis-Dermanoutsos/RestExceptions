@@ -10,6 +10,11 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/402
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/403
 Accept: application/json
 
@@ -20,7 +25,37 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/405
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/406
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/407
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/408
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/409
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/410
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/422
 Accept: application/json
 
 ###
