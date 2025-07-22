@@ -3,6 +3,9 @@ using RestExceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Uncomment the following line to use a custom implementation of IRestExceptionProblemDetailsBuilder.
+// builder.Services.AddSingleton<IRestExceptionProblemDetailsBuilder, CustomExampleRestExceptionProblemDetailsBuilder>();
+
 builder.Services.AddRestExceptions();
 
 var app = builder.Build();

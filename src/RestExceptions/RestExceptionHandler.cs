@@ -1,11 +1,15 @@
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RestExceptions;
 
-public class RestExceptionHandler(IProblemDetailsService problemDetailsService) : IExceptionHandler
+public class RestExceptionHandler(
+    IProblemDetailsService problemDetailsService,
+    IRestExceptionProblemDetailsBuilder? problemDetailsBuilder = null)
+    : IExceptionHandler
 {
+    private readonly IRestExceptionProblemDetailsBuilder _problemDetailsBuilder =
+        problemDetailsBuilder ?? new DefaultRestExceptionProblemDetailsBuilder();
     public async ValueTask<bool> TryHandleAsync(
         HttpContext httpContext,
         Exception exception,
@@ -13,14 +17,9 @@ public class RestExceptionHandler(IProblemDetailsService problemDetailsService) 
     {
         var restException = exception.MapToRestException();
 
-        var problemDetails = new ProblemDetails
-        {
-            Status = (int)restException.StatusCode,
-            Title = restException.Title,
-            Detail = restException.Message,
-            Type = $"https://www.rfc-editor.org/rfc/rfc9110.html#name-{restException.TypeSuffix}"
-        };
+        var problemDetails = _problemDetailsBuilder.Build(httpContext, restException);
 
+        // Add the extensions from the RestException to the ProblemDetails
         foreach (var kvp in restException.Extensions)
         {
             if (kvp.Value is null)
