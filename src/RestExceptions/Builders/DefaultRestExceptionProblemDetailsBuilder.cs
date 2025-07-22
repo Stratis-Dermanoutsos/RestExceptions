@@ -15,16 +15,6 @@ internal sealed class DefaultRestExceptionProblemDetailsBuilder : IRestException
             Type = $"https://www.rfc-editor.org/rfc/rfc9110.html#name-{restException.TypeSuffix}"
         };
 
-        foreach (var kvp in restException.Extensions)
-        {
-            if (kvp.Value is null)
-            {
-                continue;
-            }
-
-            problemDetails.Extensions[kvp.Key] = kvp.Value;
-        }
-
         return problemDetails;
     }
 }

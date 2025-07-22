@@ -19,6 +19,17 @@ public class RestExceptionHandler(
 
         var problemDetails = _problemDetailsBuilder.Build(httpContext, restException);
 
+        // Add the extensions from the RestException to the ProblemDetails
+        foreach (var kvp in restException.Extensions)
+        {
+            if (kvp.Value is null)
+            {
+                continue;
+            }
+
+            problemDetails.Extensions[kvp.Key] = kvp.Value;
+        }
+
         httpContext.Response.StatusCode = (int)restException.StatusCode;
         return await problemDetailsService.TryWriteAsync(
             new ProblemDetailsContext
