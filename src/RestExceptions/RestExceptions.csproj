@@ -4,7 +4,7 @@
     <Title>RestExceptions</Title>
     <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
     <Version>9.0.7.3</Version>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net8.0;net9.0</TargetFrameworks>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -17,6 +17,14 @@
 
     <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>
+      + Added support for all common HTTP 4xx and 5xx status codes
+      + Added global exception handler
+      + Added easily-overrideable ProblemDetails builder
+
+      * Wrote complete documentation
+      * Added support for more .NET versions
+    </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
@@ -26,7 +34,7 @@
     <PackageReference Include="System.Net.Http" />
   </ItemGroup>
 
-  <ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
     <!--  Required to have the AddProblemDetails extension  -->
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>

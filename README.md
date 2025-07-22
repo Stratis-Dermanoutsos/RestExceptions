@@ -4,9 +4,9 @@ Extensible Web API middleware that maps all exceptions to standardized REST-comp
 
 ## NuGet Packages
 
-| RestExceptions Package                                          | NuGet                                                                                                                                          |
-|-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
-| [RestExceptions](https://www.nuget.org/packages/RestExceptions) | [<img src='https://img.shields.io/nuget/v/RestExceptions' alt='rest-exceptions-nuget-version'>](https://www.nuget.org/packages/RestExceptions) |
+| RestExceptions Package                                          | NuGet                                                                                                                   |
+|-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| [RestExceptions](https://www.nuget.org/packages/RestExceptions) | [![NuGet](http://img.shields.io/nuget/vpre/RestExceptions.svg?label=NuGet)](https://www.nuget.org/packages/RestExceptions/) |
 
 ## Documentation
 
