@@ -10,6 +10,5 @@ public abstract class RestException(string message, Dictionary<string, object?>?
 
     public Dictionary<string, object?> Extensions { get; } = extensions ?? [];
 
-    // Add this property
     public string TypeSuffix => $"{(int)StatusCode}-{Title.ToKebabCase()}";
 }
