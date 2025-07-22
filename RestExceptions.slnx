@@ -13,8 +13,7 @@
     <File Path=".github/CODEOWNERS" />
     <File Path="README.md" />
   </Folder>
-    <Folder Name="/src/">
-      <Project Path="src\RestExceptions\RestExceptions.csproj" Type="Classic C#" />
-      <Project Path="src\RestExceptions.Plugins\RestExceptions.Plugins.csproj" Type="Classic C#" />
-    </Folder>
-  </Solution>
+  <Folder Name="/src/">
+    <Project Path="src\RestExceptions\RestExceptions.csproj" Type="Classic C#" />
+  </Folder>
+</Solution>

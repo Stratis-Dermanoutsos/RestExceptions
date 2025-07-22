@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 
 namespace RestExceptions;
 
@@ -9,7 +8,6 @@ public class RestExceptionHandler(
     IRestExceptionProblemDetailsBuilder? problemDetailsBuilder = null)
     : IExceptionHandler
 {
-    private readonly IProblemDetailsService _problemDetailsService = problemDetailsService;
     private readonly IRestExceptionProblemDetailsBuilder _problemDetailsBuilder =
         problemDetailsBuilder ?? new DefaultRestExceptionProblemDetailsBuilder();
     public async ValueTask<bool> TryHandleAsync(
@@ -22,7 +20,7 @@ public class RestExceptionHandler(
         var problemDetails = _problemDetailsBuilder.Build(httpContext, restException);
 
         httpContext.Response.StatusCode = (int)restException.StatusCode;
-        return await _problemDetailsService.TryWriteAsync(
+        return await problemDetailsService.TryWriteAsync(
             new ProblemDetailsContext
             {
                 HttpContext = httpContext,
