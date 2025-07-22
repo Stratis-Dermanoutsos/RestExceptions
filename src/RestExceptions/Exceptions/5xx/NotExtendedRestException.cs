@@ -5,7 +5,10 @@ namespace RestExceptions;
 /// <summary>
 /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/510
 /// </summary>
-public class NotExtendedRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+public class NotExtendedRestException(
+    string? message = null,
+    Dictionary<string, object?>? extensions = null)
+    : RestException(message ?? DefaultMessage, extensions), IRestException
 {
     public static string DefaultMessage => "The client request declares an HTTP Extension that should be used to process the request, but the extension is not supported.";
 

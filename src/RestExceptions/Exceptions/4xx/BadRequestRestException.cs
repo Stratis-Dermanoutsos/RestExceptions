@@ -5,7 +5,10 @@ namespace RestExceptions;
 /// <summary>
 /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/400
 /// </summary>
-public class BadRequestRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+public class BadRequestRestException(
+    string? message = null,
+    Dictionary<string, object?>? extensions = null)
+    : RestException(message ?? DefaultMessage, extensions), IRestException
 {
     public static string DefaultMessage => "Malformed request syntax.";
 

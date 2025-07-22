@@ -14,8 +14,15 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         400 => new BadRequestRestException(),
         401 => new UnauthorizedRestException(),
         403 => new ForbiddenRestException(),
-        404 => new NotFoundRestException(),
-        409 => new ConflictRestException(),
+        404 => new NotFoundRestException(extensions: new Dictionary<string, object?>
+        {
+            { "notFoundProperty", "This is a Not Found prop." }
+        }),
+        409 => new ConflictRestException(extensions: new Dictionary<string, object?>
+        {
+            { "conflictProperty", "This is a Conflict prop." },
+            { "conflictProperty2", "This is another Conflict prop." },
+        }),
         422 => new UnprocessableContentRestException(),
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),

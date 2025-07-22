@@ -5,7 +5,10 @@ namespace RestExceptions;
 /// <summary>
 /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/501
 /// </summary>
-public class NotImplementedRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+public class NotImplementedRestException(
+    string? message = null,
+    Dictionary<string, object?>? extensions = null)
+    : RestException(message ?? DefaultMessage, extensions), IRestException
 {
     public static string DefaultMessage => "This method is not yet implemented.";
 

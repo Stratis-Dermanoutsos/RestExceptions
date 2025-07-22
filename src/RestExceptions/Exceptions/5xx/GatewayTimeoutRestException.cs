@@ -5,7 +5,10 @@ namespace RestExceptions;
 /// <summary>
 /// https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/504
 /// </summary>
-public class GatewayTimeoutRestException(string? message = null) : RestException(message ?? DefaultMessage), IRestException
+public class GatewayTimeoutRestException(
+    string? message = null,
+    Dictionary<string, object?>? extensions = null)
+    : RestException(message ?? DefaultMessage, extensions), IRestException
 {
     public static string DefaultMessage => "The server did not get a response in time in order to complete the request.";
 
