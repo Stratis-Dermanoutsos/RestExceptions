@@ -8,26 +8,23 @@ Extensible Web API middleware that maps all exceptions to standardized REST-comp
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | [RestExceptions](https://www.nuget.org/packages/RestExceptions) | [<img src='https://img.shields.io/nuget/v/RestExceptions' alt='rest-exceptions-nuget-version'>](https://www.nuget.org/packages/RestExceptions) |
 
-## Usage
+## Documentation
 
-```csharp
-// Program.cs
+You can read the documentation for **RestExceptions** on [GitHub wiki](https://github.com/Stratis-Dermanoutsos/RestExceptions/wiki).
 
-var builder = WebApplication.CreateBuilder(args);
+## Example response format (404)
 
-// ...
-
-// Add the service
-builder.Services.AddRestExceptions();
-
-var app = builder.Build();
-
-//! Important
-app.UseExceptionHandler();
-
-// ...
-
-app.Run();
+```json
+{
+  "type": "https://www.rfc-editor.org/rfc/rfc9110.html#name-404-not-found",
+  "title": "Not Found",
+  "status": 404,
+  "detail": "Content not found.",
+  "instance": "/users/12",
+  "traceId": "00-f3e52009f0966d717f93c9653ed45e26-750dad4218610f7f-00",
+  "method": "GET",
+  "requestId": "0HNE94J42PNH8:00000001"
+}
 ```
 
 ## Examples and sample project
