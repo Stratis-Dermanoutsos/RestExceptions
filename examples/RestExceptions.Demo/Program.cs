@@ -38,6 +38,8 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         423 => new LockedRestException(),
         424 => new FailedDependencyRestException(),
         426 => new UpgradeRequiredRestException(),
+        428 => new PreconditionRequiredRestException(),
+        429 => new TooManyRequestsRestException(),
         // 5xx
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),

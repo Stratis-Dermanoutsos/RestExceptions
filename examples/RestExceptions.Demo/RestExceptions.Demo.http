@@ -115,6 +115,16 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/428
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/429
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/500
 Accept: application/json
 
