@@ -80,6 +80,21 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/416
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/417
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/421
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/422
 Accept: application/json
 

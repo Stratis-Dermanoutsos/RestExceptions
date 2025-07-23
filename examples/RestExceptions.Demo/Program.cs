@@ -31,6 +31,9 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         413 => new ContentTooLargeRestException(),
         414 => new UriTooLongRestException(),
         415 => new UnsupportedMediaTypeRestException(),
+        416 => new RangeNotSatisfiableRestException(),
+        417 => new ExpectationFailedRestException(),
+        421 => new MisdirectedRequestRestException(),
         422 => new UnprocessableContentRestException(),
         // 5xx
         500 => new InternalServerErrorRestException(),
