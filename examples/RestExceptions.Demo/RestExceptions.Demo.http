@@ -55,6 +55,31 @@ Accept: application/json
 
 ###
 
+GET {{Demo_HostAddress}}/error/411
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/412
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/413
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/414
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/415
+Accept: application/json
+
+###
+
 GET {{Demo_HostAddress}}/error/422
 Accept: application/json
 
