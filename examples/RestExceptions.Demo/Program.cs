@@ -35,6 +35,9 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         417 => new ExpectationFailedRestException(),
         421 => new MisdirectedRequestRestException(),
         422 => new UnprocessableContentRestException(),
+        423 => new LockedRestException(),
+        424 => new FailedDependencyRestException(),
+        426 => new UpgradeRequiredRestException(),
         // 5xx
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),
