@@ -2,9 +2,7 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
-    <Version>9.0.7.2</Version>
-    <TargetFramework>net9.0</TargetFramework>
+    <Version>9.0.7.3</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -15,8 +13,17 @@
     <PackageProjectUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</RepositoryUrl>
 
+    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
     <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReleaseNotes>
+      + Added support for all common HTTP 4xx and 5xx status codes
+      + Added global exception handler
+      + Added easily-overrideable ProblemDetails builder
+
+      * Wrote complete documentation
+      * Added support for more .NET versions
+    </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>

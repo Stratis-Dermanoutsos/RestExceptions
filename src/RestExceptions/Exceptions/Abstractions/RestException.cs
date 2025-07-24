@@ -1,25 +1,12 @@
-using System.Net;
-using System.Text.RegularExpressions;
-
 namespace RestExceptions;
 
 [Serializable]
-public abstract partial class RestException(string message) : Exception(message)
+public abstract class RestException(string message, Dictionary<string, object?>? extensions) : Exception(message)
 {
     public abstract string Title { get; }
     public abstract HttpStatusCode StatusCode { get; }
 
-    // Add this property
-    public string TypeSuffix
-    {
-        get
-        {
-            // Lowercase, replace non-alphanumerics with -, and collapse dashes.
-            var kebab = NotWordRegex().Replace(Title.ToLowerInvariant(), "-").Trim('-');
-            return $"{(int)StatusCode}-{kebab}";
-        }
-    }
+    public Dictionary<string, object?> Extensions { get; } = extensions ?? [];
 
-    [GeneratedRegex(@"[^\w]+")]
-    private static partial Regex NotWordRegex();
+    public string TypeSuffix => $"{(int)StatusCode}-{Title.ToKebabCase()}";
 }
