@@ -40,6 +40,8 @@ app.MapGet("error/{statusCode:int}", ([FromRoute] int statusCode) =>
         426 => new UpgradeRequiredRestException(),
         428 => new PreconditionRequiredRestException(),
         429 => new TooManyRequestsRestException(),
+        431 => new RequestHeaderFieldsTooLargeRestException(),
+        451 => new UnavailableForLegalReasonsRestException(),
         // 5xx
         500 => new InternalServerErrorRestException(),
         501 => new NotImplementedRestException(),

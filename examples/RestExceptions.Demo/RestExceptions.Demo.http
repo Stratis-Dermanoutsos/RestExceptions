@@ -1,4 +1,4 @@
-@Demo_HostAddress = http://localhost:5092
+@Demo_HostAddress = https://localhost:5092
 
 GET {{Demo_HostAddress}}/error/400
 Accept: application/json
@@ -121,6 +121,16 @@ Accept: application/json
 ###
 
 GET {{Demo_HostAddress}}/error/429
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/431
+Accept: application/json
+
+###
+
+GET {{Demo_HostAddress}}/error/451
 Accept: application/json
 
 ###
