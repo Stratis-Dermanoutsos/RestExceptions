@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RestExceptions;
 
-internal sealed class DefaultRestExceptionProblemDetailsBuilder : IRestExceptionProblemDetailsBuilder
+public sealed class DefaultRestExceptionProblemDetailsBuilder : IRestExceptionProblemDetailsBuilder
 {
     public ProblemDetails Build(HttpContext httpContext, RestException restException)
     {
