@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace RestExceptions;
+namespace RestExceptions.Demo.Builders;
 
 /// <summary>
 /// Custom example implementation of <see cref="IRestExceptionProblemDetailsBuilder"/>.
@@ -14,10 +13,13 @@ public class CustomExampleRestExceptionProblemDetailsBuilder : IRestExceptionPro
 {
     public ProblemDetails Build(HttpContext httpContext, RestException restException)
     {
+        // Use the default builder to create a base ProblemDetails object
         var defaultBuilder = new DefaultRestExceptionProblemDetailsBuilder();
         var problemDetails = defaultBuilder.Build(httpContext, restException);
+
+        // Modify the ProblemDetails as per the custom logic
         problemDetails.Detail = restException.Title;
-        problemDetails.Title = restException.Message;
+        problemDetails.Title = "Message in title: " + restException.Message;
 
         return problemDetails;
     }
