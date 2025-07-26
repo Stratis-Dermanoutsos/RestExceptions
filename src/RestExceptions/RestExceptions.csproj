@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Version>9.0.7.3</Version>
+    <Version>9.0.7.4</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -17,12 +17,7 @@
     <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
-      + Added support for all common HTTP 4xx and 5xx status codes
-      + Added global exception handler
-      + Added easily-overrideable ProblemDetails builder
-
-      * Wrote complete documentation
-      * Added support for more .NET versions
+      * Made default IRestExceptionProblemDetailsBuilder implementation public.
     </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
