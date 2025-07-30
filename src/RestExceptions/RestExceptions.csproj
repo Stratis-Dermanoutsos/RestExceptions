@@ -13,8 +13,8 @@
     <PackageProjectUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</RepositoryUrl>
 
-    <Description>Extensible Web API middleware that maps all exceptions to standardized REST-compliant error responses.</Description>
-    <PackageTags>rest;exceptions;problem-details;http;errors;</PackageTags>
+    <Description>Extensible Web API middleware that maps all exceptions to standardized RFC 9110-compliant HTTP responses.</Description>
+    <PackageTags>open-source http oss rest errors csharp dotnet exceptions problem-details</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageReleaseNotes>
       * Made default IRestExceptionProblemDetailsBuilder implementation public.
