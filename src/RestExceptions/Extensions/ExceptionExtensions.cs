@@ -1,3 +1,8 @@
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Globalization;
+using Microsoft.AspNetCore.Http;
+
 namespace RestExceptions;
 
 public static class ExceptionExtensions
@@ -21,13 +26,22 @@ public static class ExceptionExtensions
         return exception switch
         {
             // 404 - Not Found
-            ArgumentNullException
-                or ArgumentOutOfRangeException
+            CultureNotFoundException
                 or DirectoryNotFoundException
+                or DllNotFoundException
+                or DriveNotFoundException
+                or EntryPointNotFoundException
+                or EventLogNotFoundException
                 or FileNotFoundException
-                or KeyNotFoundException => new NotFoundRestException(exception.Message, extensions),
+                or KeyNotFoundException
+                or TimeZoneNotFoundException
+                or VersionNotFoundException => new NotFoundRestException(exception.Message, extensions),
             // 400 - Bad Request
-            ArgumentException => new BadRequestRestException(exception.Message, extensions),
+            ArgumentException
+                or ArgumentNullException
+                or ArgumentOutOfRangeException
+                or BadHttpRequestException
+                or ConstraintException => new BadRequestRestException(exception.Message, extensions),
             // 403 - Forbidden
             AccessViolationException
                 or UnauthorizedAccessException => new ForbiddenRestException(exception.Message, extensions),
