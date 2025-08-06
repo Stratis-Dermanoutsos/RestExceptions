@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Version>9.0.7.4</Version>
+    <Version>9.0.8</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -16,8 +16,8 @@
     <Description>Extensible Web API middleware that maps all exceptions to standardized RFC 9110-compliant HTTP responses.</Description>
     <PackageTags>open-source http oss rest errors csharp dotnet exceptions problem-details</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>
-      * Made default IRestExceptionProblemDetailsBuilder implementation public.
+    <PackageReleaseNotes>* Updated dependencies
+      * Better automated handling for .NET native exceptions
     </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
