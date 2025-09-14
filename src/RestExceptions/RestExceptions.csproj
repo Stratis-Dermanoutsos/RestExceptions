@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Version>9.0.8</Version>
+    <Version>9.0.9</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
