@@ -16,8 +16,7 @@
     <Description>Extensible Web API middleware that maps all exceptions to standardized RFC 9110-compliant HTTP responses.</Description>
     <PackageTags>open-source http oss rest errors csharp dotnet exceptions problem-details</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>* Updated dependencies
-      * Better automated handling for .NET native exceptions
+    <PackageReleaseNotes>* Updated dependencies to latest versions.
     </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
