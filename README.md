@@ -1,6 +1,6 @@
 # RestExceptions
 
-Extensible Web API middleware that maps all exceptions to standardized [RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html)-compliant HTTP responses.
+Extensible Web API middleware that maps all exceptions to standardized [RFC7807](https://www.rfc-editor.org/rfc/rfc7807.html)-compliant HTTP responses.
 
 ## NuGet Packages
 
