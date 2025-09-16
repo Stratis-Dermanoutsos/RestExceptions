@@ -10,7 +10,7 @@ Extensible Web API middleware that maps all exceptions to standardized [RFC7807]
 
 ## Documentation
 
-You can read the documentation for **RestExceptions** on [GitHub wiki](https://github.com/Stratis-Dermanoutsos/RestExceptions/wiki).
+You can read the documentation for **RestExceptions** on [GitHub wiki](https://github.com/Stratis-OSS/RestExceptions/wiki).
 
 ## Example response format (404)
 
