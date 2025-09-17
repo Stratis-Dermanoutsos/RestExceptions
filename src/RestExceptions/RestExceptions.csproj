@@ -2,7 +2,7 @@
   <PropertyGroup>
     <PackageId>RestExceptions</PackageId>
     <Title>RestExceptions</Title>
-    <Version>9.0.8</Version>
+    <Version>9.0.9</Version>
 
     <Authors>Stratis-Dermanoutsos</Authors>
     <Company>Stratis-Dermanoutsos</Company>
@@ -10,14 +10,13 @@
     <Copyright>Copyright (c) Stratis Dermanoutsos 2025</Copyright>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
-    <PackageProjectUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/Stratis-Dermanoutsos/RestExceptions</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/Stratis-OSS/RestExceptions</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Stratis-OSS/RestExceptions</RepositoryUrl>
 
-    <Description>Extensible Web API middleware that maps all exceptions to standardized RFC 9110-compliant HTTP responses.</Description>
-    <PackageTags>open-source http oss rest errors csharp dotnet exceptions problem-details</PackageTags>
+    <Description>Extensible Web API middleware that maps all exceptions to standardized RFC7807-compliant HTTP responses.</Description>
+    <PackageTags>open-source http oss rest errors csharp dotnet exceptions problem-details rfc7807</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <PackageReleaseNotes>* Updated dependencies
-      * Better automated handling for .NET native exceptions
+    <PackageReleaseNotes>* Updated dependencies to latest versions.
     </PackageReleaseNotes>
 
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
